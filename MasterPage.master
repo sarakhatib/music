@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Music</title>
+    <style type="text/css">
+        .ZIndex
+        {
+            z-index: 999;
+        }
+        .style1
+        {
+            height: 27px;
+        }
+    </style>
+</head>
+<body background="Images/bg9.jpg">
+    <form id="form1" runat="server">
+    <div>
+        <table width="100%">
+            <tr>
+                <td colspan="2">
+                    <img src="Images/mainlogo.jpg" style="height: 361px; width: 100%" />
+                    <br />
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="style1">
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" BackColor="#ff5050"
+                        DynamicHorizontalOffset="2" Font-Names="Bernard MT Condensed" Font-Size="Large"
+                        ForeColor="#cc0066" StaticSubMenuIndent="10px" RenderingMode="Table" Width="100%"
+                        OnMenuItemClick="Menu1_MenuItemClick">
+                        <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#FFFBD6" />
+                        <DynamicSelectedStyle BackColor="#FFCC66" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                            <asp:MenuItem Text="Types of Music " Value="TypesofMusic ">
+                                <asp:MenuItem NavigateUrl="~/Rock.aspx" Text="ROCK!" Value="ROCK!"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Pop.aspx" Text="Pop" Value="Pop"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Rap.aspx" Text="Rap" Value="Rap"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Jazz.aspx" Text="Jazz" Value="Jazz"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Country.aspx" Text="Country" Value="Country"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/TopPop.aspx" Text="Weekly Top Pop Hits" Value="WeeklyTopPopHits">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ThenVsNow.aspx" Text="Then Vs. Now" Value="ThenVs.Now">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Quotes.aspx" Text="Quotes" Value="Quotes"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/OurSongs.aspx" Text="Our Songs" Value="OurSongs">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Favorite.aspx" Text="Favorite" Value="Favorite">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/AllPlaylists.aspx" Text="Playlists" 
+                                Value="Playlists"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/UserProfile.aspx" Text="Profile" Value="Profile">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/MusicalInstruments.aspx" Text="Musical Instruments"
+                                Value="Musical-Instruments"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us" Value="ContactUs">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/SignUp.aspx" Text="Sign Up" Value="SignUp"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin.aspx" Text="Admin" Value="Admin"></asp:MenuItem>
+                            <asp:MenuItem Text="LogIn" Value="LogIn"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#FFCC66" />
+                    </asp:Menu>
+                </td>
+            </tr>
+            <tr>
+                <td width="70%" style="direction: ltr">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td width="30%">
+                    <asp:Calendar ID="MyCalendar" runat="server" BackColor="White" BorderColor="Black"
+                        DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="#FF0066"
+                        Height="225px" ShowGridLines="True" VisibleDate="2016-11-04" Width="244px" OnDayRender="MyCalendar_DayRender"
+                        OnSelectionChanged="MyCalendar_SelectionChanged">
+                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333"
+                            Height="10pt" />
+                        <DayStyle Width="14%" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                        <TitleStyle BackColor="#FF3399" BorderColor="#FF5050" Font-Bold="True" Font-Size="13pt"
+                            ForeColor="White" Height="14pt" Wrap="True" />
+                        <TodayDayStyle BackColor="#FF66FF" />
+                        <WeekendDayStyle BackColor="#660033" />
+                    </asp:Calendar>
+                    <asp:Label ID="LabelDaySelected" runat="server" Text=""></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
